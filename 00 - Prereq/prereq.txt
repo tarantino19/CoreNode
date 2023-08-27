@@ -1,0 +1,13 @@
+know the basics:
+mkdir
+cd
+touch
+clear
+code
+rm, remove
+
+
+
+use vscode, prettier
+nvm install
+nvm uninstall
