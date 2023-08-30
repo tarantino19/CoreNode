@@ -1,0 +1,83 @@
+90 yrs ago first computer - 1936 - 01 binary code
+Assembly - 1949
+C - 1970
+C++ -  1980s
+First commercial personal computer - 1977 - apple 1 and 2
+Internet  - 1983
+website - 1991
+javascript - 1995
+internet explorer - microsoft  - 1995
+ECMASCRIPT - 1997 - run the same on different browsers
+firefox - 2002
+chrome v8 - spe 2008
+nodejs - may 2009
+nodejs v8 now more compatible than ever
+
+LIBUV - one of the most important dependency of nodejs
+
+Assistive language - to create network applications -  a server side language
+
+Need to be able to do something that js cant do.
+what are these????
+E.g
+1 - talk to db servers to fetch or write data
+2 - to deal with files
+3 - scaling, handle millions of users/requests at the same time
+4 - network requests - tcp req, from port, or send req to diff URLs
+these are done via LIBUV - written in C by creator of nodejs
+
+e.g.
+pipes - way of communication - os level
+processes - we see this for example in activity monitor on mac
+
+
+
+CPU-RAM-STORAGE-NETWORK CARD
+-> OPERATING SYSTEM
+-> NODEJS processes - V8, libuv
+
+V8 - event loop - libuv
+
+js is synchronous - single thread - top to bottom
+
+synchronous - 
+1 - cl 1
+2 - for loop 100mx
+3 - cl 2 - this wont run till end of #2
+
+Nodejs is for asynchronous code - event loop and libuv
+
+libuv allows us to...
+1 - go do your own thing, and even not finish...
+2 - while I do this other thing
+
+
+asynchronous e.g.
+
+cl 1
+require fs function - were gonna tel lubuv, go ahead an fecth the file ans give it back to nodejs process - then it will give the data to v8 and execute the callback function
+cl 2
+
+
+it'll exit when its done
+
+
+e.g. timer functions - calling the event loops - so its slowers than say a console.log
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

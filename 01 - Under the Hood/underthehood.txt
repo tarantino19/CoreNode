@@ -1,0 +1,53 @@
+What the heck is NodeJS?
+
+1 - Hardware Processors - Machine Code (mips, arm64, x86)(01000, 000100)have their own machine code 
+
+2 - Assembly Language - assembler - turns assembly code into machine code
+
+3 - C/C++ - access to memory (Compiler then take the code to assembly to machine code) = can create OS
+
+4 - JavaScript/Python - High level, cant send network req, closer to human Language. Telling the computer to do something.
+JS - what do we use to convert? JS ENGINE - V8/SpiderMonkey - MACHINE CODE
+Spidermonkey - bytecode - another layer before the machine code (virtual machine)
+V8 was used to create NodeJS - JS CODE straight to machine code
+
+ECMAScript - language specifications how JS should be implemented.
+
+V8 can run standalone or be embedded to any c++ applications.
+
+  How NODEJS works w/ v8?
+
+  functions gets binded with v8
+
+  example: v8.bind(fileCreationFunction) (not the right syntax, just a pseudocode)
+
+so when we run that application, we will be able to run that function
+e.g. fileCreatorFunction(filepath, content)\
+
+1 - We're writing JavaScript
+2 - But we're running/calling C++ functions (deal w files, network card, etc.)
+
+V8 is in the node source code and binding those functions and their application so we can then use Javascript to do stuff.
+e.g.
+use the require function and use http and listen for requests.
+
+Libraries: v8, libuv,Openssl, etc
+
+Libuv - c library handles, file system, dns, child processes, pipes, signal handling etc.
+
+llhttp - http parsing
+
+
+e.g.
+const fs = require ("fs") - were including the fs file which has its own code in the node code.
+
+
+
+
+
+
+
+
+
+
+
