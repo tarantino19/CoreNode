@@ -1,0 +1,10 @@
+What is an event emitter?
+
+A way to deal with async nodejs, a pattern, for the code to be more readable and more manageable.
+
+Heavily used in different parts of nodejs
+
+use cases sample from reddit:
+
+https://www.reddit.com/r/node/comments/xd2wek/what_is_a_correct_use_case_for_eventemitter_class/
+
