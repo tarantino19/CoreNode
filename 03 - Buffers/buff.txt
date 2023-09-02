@@ -1,0 +1,74 @@
+Binary Data - zeros and ones
+01010101
+everything we have on our computer are just zeros and ones
+transistors - off and on switch
+
+bunch of boxes = 1 byte = 8 bits
+each box can have 1 or zeros
+
+Base 10 numbers - binary
+
+9 * 10 to the power of 0
+1 * 10 to the power of 1
+3 * 10 to the power of 2
+
+9 + 10 + 300  = 319
+
+Base 16 numbers - hexadecimal numbers
+
+0x -indicator
+0x456
+
+6 * 16 to the power of 0 = 6
+5 * 16 to the power of 1 = 80
+4 * 16 to the power of 2 = 1024
+
+
+0x456 - this hexadecimal number is this number => 1110 
+60 + 80 + 1024 = 1110
+//start from right to left not counting the 0
+
+hexadecimal - base 16
+decimal - base 10
+binary - base 2
+
+hexadecimal helps us work better with binary numbers, way easier to deal w binary code.
+
+example we use it for:
+1 - color codes
+2 - characters in url like space
+3 - unicode characters
+
+0x prefix is the most common indicator of hexadecimal numbers
+
+use default calculator  - view - programmer
+
+
+Character Sets
+- letters and symbols that a writing system uses
+and a representation of assigning different numbers to those characters
+
+e.g.
+unicode - defines 144, 697 characters
+ascii - letters, numbers, punctuations - a subset of unicode
+other ones exist as well but these 2 are the most common ones use for coding
+
+Character Encoding
+- a system of assigning a sequence of bytes (zeros and ones) to a characters
+
+Make sure to define the character Encoding we're using in our program
+e.g. UTF-8
+
+
+BUFFERS
+
+A contain in memory that has a fixed sized that gets some data and quickly sends it to another place.
+
+E.g. we get the data on the buffer, and then we do something with it and then we throw it away.
+
+Buffer is available globally
+
+Use Cases - STREAMS
+
+usually streams  -  buffer - usually streams
+

@@ -4,6 +4,18 @@ A way to deal with async nodejs, a pattern, for the code to be more readable and
 
 Heavily used in different parts of nodejs
 
+EVENT - a signal that something has happened in our application.
+
+http - for web server
+http - request - raises an event - our job is to respond to that event
+,reading that request and responding to that event.
+
+const EventEmitter = require("events");
+const emitter = new EventEmitter
+
+emitter.on ('messageLogged' (callbackfunction ()=> {})) - register a listener, interested in that event  - same associated.addListener
+emitter.emit ('messageLogged') - emit - making a noise, signalling
+
 use cases sample from reddit:
 
 https://www.reddit.com/r/node/comments/xd2wek/what_is_a_correct_use_case_for_eventemitter_class/

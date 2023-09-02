@@ -9,7 +9,7 @@ const server = http.createServer(async (req, res) => {
 	const contentBuffer = await fs.readFile(__dirname + "/prereq.txt");
 	res.statusCode = 200;
 	res.setHeader("Content-Type", "text/plain");
-	res.end(contentBuffer.toString("utf-8"));
+	res.end(contentBuffer.toString());
 });
 
 server.listen(PORT, () => {
