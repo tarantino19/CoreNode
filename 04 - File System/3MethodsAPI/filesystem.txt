@@ -1,0 +1,57 @@
+const fs = require(fs)
+const content = fs.readFileSync('./text.txt')
+console log content will show buffer - zeros and ones
+we will receive a buffer and we can turn it into strings
+or other available buffer methods.
+- character encoding to turn it into a strings
+
+example app, allows us to create, delete, rename, and add to the file
+
+What is a file?
+
+A sequence of bits
+
+Hard Drive  - > 101010 file -> file data (w protection details - access, read, write,location, type, timestamps, last modified, etc.)
+
+a sequence of bits may belong to different files 
+
+whole operating system are just a bunch of files
+
+even commands are just files
+use which mkdir and open /path
+we will see the files/cmd files
+
+How nodejs deal with files?
+
+nodejs - operating system via system calls (i wanna do this - open()- via libuv)
+- > hard drive w/ its zeros and ones
+
+writefile,readFile
+we can use 3 different ways to do the same thing in nodejs
+1 - Promises API
+2 - Callback API
+3 - Synchronous API
+
+They all do the same thing.
+In general, stick with promises API
+- cleaner - most of the functions in nodejs use this
+
+if we want max performance - use callback API
+
+- dont use synchronous api not a good practice generally 
+- e.g. use when we need to read something when starting an application
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
