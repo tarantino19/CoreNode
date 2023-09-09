@@ -1,0 +1,122 @@
+stream - makes data streaming more efficient - DATA FLOWING => continuos flow
+we don't move the whole data in one chunk - first come first serve basis
+sending data in different chunks
+
+e.g. - copy pasting files -
+10gb ->  copy  -> folder - problem is it is coming at the same time.
+like 500 people coming at the same time in just one tiny door
+it's possible but not ideal
+what is it's in the mobile w/ limited gb?
+
+that's what streams are for
+
+NODEJS  ->  CPU-RAM-STORAGE
+http modules are also network applications
+
+2 main streams - writable, readable
+
+readable stream to open, //writable stream to say, use that file
+send request - writing
+request coming from client - reading
+duplex - writable and readable
+transform - just like duplex but transforms the data
+
+when there's a flow of data, streams are awesome to use
+
+----WRITABLE STREAM----
+
+ has events, properties, and methods available 
+ internal buffer size is 16384 bytes
+
+ fs.createWriteStream()
+
+stream.write(data) - like a buffer
+we can pushing to this block until it's full and it will do a write and will pull a data out with 1 write
+
+we write to an underlying resource -> file, network card
+we're writing in our memory first
+
+no streams: writing 1MX to file
+w/ streams: we gather the 1m data and we write once
+
+what if we write we write slightly bigger than our streams internal buffer?
+
+buffer - a location in memory that holds a specific amount of data 
+- if we keep buffering data, we'll run into memory issues.
+if we keep writing without it getting emptied - we'll run into memory issue.
+
+
+what to do?
+wait for it to get emptied and do another write.
+------ DRAINING EVENT --------
+
+---WRITABLE STREAM -----
+fs.createReadStream()
+
+ has events, properties, and methods available 
+ internal buffer size is 16384 bytes
+
+stream.push(data)
+
+stream.on(data =>{...})
+
+WHAT IF--- we have a very huge data we want to write - 
+what we should do is create a readable stream first - 
+-then get data in chunks - then write in the writable streams.
+
+DUPLEX - read and write stream - 2 internal buffer
+TRANSFORM has two as well - one for reading one for writing.
+
+
+----STREAM IN FS MODULE AND HTTP IS PRETTY MUCH THE SAME CONCEPT----
+
+
+Almost all Node.js applications, no matter how simple, use streams in some manner. 
+https://nodejs.org/api/stream.html
+
+api for stream consumers part
+
+const server = http.createServer((req, res) => {
+  // `req` is an http.IncomingMessage, which is a readable stream.
+  // `res` is an http.ServerResponse, which is a writable stream.
+
+Writable streams#
+Writable streams are an abstraction for a destination to which data is written.
+
+Examples of Writable streams include:
+
+HTTP requests, on the client
+HTTP responses, on the server
+fs write streams
+zlib streams
+crypto streams
+TCP sockets
+child process stdin
+process.stdout, process.stderr
+
+https://nodejs.org/api/stream.html
+
+look at stream on events
+
+always read the description of the events
+
+
+
+*****
+----READABLE STREAMS------
+*****
+
+readbig file
+
+
+
+
+//PIPING
+
+
+//custom-writable
+how to implement our own streams
+
+
+
+
