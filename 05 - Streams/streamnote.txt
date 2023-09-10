@@ -140,3 +140,9 @@ good practice - look at different npm packages that uses streams and how they ar
 // use multer
 // busboy - file uploads
 
+https://developer.mozilla.org/en-US/docs/Web/API/Streams_API
+
+javascript streams api -webstream frontend
+Streaming involves breaking a resource that you want to receive over a network down into small chunks, then processing it bit by bit. Browsers already do this when receiving media assets — videos buffer and play as more of the content downloads, and sometimes you'll see images display gradually as more is loaded too.
+
+
