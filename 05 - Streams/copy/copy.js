@@ -16,7 +16,44 @@ const { pipeline } = require("node:stream/promises");
   const readStream = srcFile.createReadStream();
   const writeStream = destFile.createWriteStream();
 
-  ///// ONE SOLUTION
+    //*****PIPING SOLUTION*****
+  // Don't use pipe in production, use pipeline instead! It will automatically
+  // handle the cleanings for you and give you an easy way for error handling
+  //1.2s- 700ms
+
+  //STEP 3 
+  //promise method - named function
+
+  const copyStreamPipeline = async (err) => {
+    await pipeline(readStream, writeStream);
+    console.log(err);
+    console.timeEnd("copy");
+  }
+  copyStreamPipeline()
+
+
+  //anon async function way
+  // (async () => {
+  //   await pipeline(readStream, writeStream);
+  //   console.log(err);
+  //   console.timeEnd("copy");
+  // })()
+
+    //callback method
+  // pipeline(readStream, writeStream, (err) => {
+  //   console.log(err);
+  //   console.timeEnd("copy");
+  // });
+
+
+  //*****PIPING SOLUTION*****
+
+  // READSTREAM
+    // readStream.on ('data', (chunk) => {
+  //   console.log(chunk.toString ('utf-8')) //1-999999
+  // }) -to read an cl the content
+
+  ///// ANOTHER SOLUTION
   //step 3 - use piping - for draining - handling backpressure, resuming and pausing
   // readStream.pipe(writeStream); //destination has to be a writable/duplex/transform - can do chaining .pipe(writableStream) - but it has to be duplex or transform - before .pipe has to be a readable stream
 
@@ -24,7 +61,7 @@ const { pipeline } = require("node:stream/promises");
   //   console.timeEnd("copy");
   // });
 
-  //// ONE SOLUTION
+  //// ANOTHER E SOLUTION
 
     // console.log(readStream.readableFlowing);
 
@@ -40,35 +77,7 @@ const { pipeline } = require("node:stream/promises");
 
   // console.log(readStream.readableFlowing);
 
-  //*****PIPING SOLUTION*****
-  // Don't use pipe in production, use pipeline instead! It will automatically
-  // handle the cleanings for you and give you an easy way for error handling
-  //1.2s- 700ms
-
-  //callback method
-  // pipeline(readStream, writeStream, (err) => {
-  //   console.log(err);
-  //   console.timeEnd("copy");
-  // });
-
-  //promise method - named function
-  const copyStreamPipeline  = async (err) => {
-    await pipeline(readStream, writeStream);
-    console.log(err);
-    console.timeEnd("copy");
-  }
-  copyStreamPipeline()
-
-  //anon async function way
-  // (async () => {
-  //   await pipeline(readStream, writeStream);
-  //   console.log(err);
-  //   console.timeEnd("copy");
-  // })()
-
-  //*****PIPING SOLUTION*****
-
- // console.timeEnd("copy"); //not accurate witohut the streamread.on end
+ // console.timeEnd("copy"); //not accurate without the streamread.on end
 })()
 
 //don't use pipe in production
