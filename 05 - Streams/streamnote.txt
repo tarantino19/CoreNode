@@ -117,6 +117,15 @@ readbig file
 //custom-writable
 how to implement our own streams - pretty much same as node provided createWriteStream
 
+//duplex - we usually use this for TCP
+//JS does not have support for multiple inheritance
+
+readable internal buffer - > writable internal buffer - and we get the data out?
+if we do some operations  - then it's 
+this is a transform stream./// passthrough stream no operation in between
+
+
+
 
 
 
