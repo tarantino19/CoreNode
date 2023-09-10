@@ -129,3 +129,14 @@ this is a transform stream./// passthrough stream no operation in between
 
 
 
+//JAVASSCRIPT OBJECT LARGE AMOUNT - we can use object modules
+//pg package in node - we can use this to interact with a psotgres database in our applications
+//pg query streams
+
+good practice - look at different npm packages that uses streams and how they are implementing them.
+
+
+//using express to handle file uploads?
+// use multer
+// busboy - file uploads
+
