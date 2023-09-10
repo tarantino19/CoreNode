@@ -115,7 +115,7 @@ readbig file
 
 
 //custom-writable
-how to implement our own streams
+how to implement our own streams - pretty much same as node provided createWriteStream
 
 
 
