@@ -1,0 +1,43 @@
+Basics of Networking
+
+Learn TCP - all protocols are built on top of it.
+e.g. http, ftp, ssh, email protocols, etc.
+
+Use when i wanna share an info to another computer
+
+1 - In the old days, flash drive, floppy disk, etc
+2 - Today, after a cable -  switch  - networking card in the computer (w/ mac addresses)
+Via cables - need to send via packets - to switch - > another computer
+How to connect a network of computers to another network of computers?
+we can use ROUTERS that used ip addresses (automatically assigned by the router to computer)
+
+This is basically what the internet is, interconnected computers.
+
+There's physical connection even in wifi/wireless use...
+e.g. wifi - connected ro a router - that router is connected to one local provider/ISP internet service provider - then that one local provider may be connected to the world.
+
+Router today - as a switch, cables, wifi.
+
+What does these cables do? Just moving zeros and ones together.
+wifi - travellin to waves/air
+*****
+
+You can make any machine a server. 
+
+search for "how to find my machien ip addresses
+
+ip addresses has to be accurate.
+
+
+
+
+
+
+
+
+****
+
+UNDERSTANDING NETWORKING LAYERS
+
+****
+
