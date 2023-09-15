@@ -29,15 +29,80 @@ search for "how to find my machien ip addresses
 ip addresses has to be accurate.
 
 
-
-
-
-
-
-
 ****
 
 UNDERSTANDING NETWORKING LAYERS
 
 ****
+
+5 - Application Layer - Data - NODEJS - as a dev, we figure out if we use tcp/udp
+
+1-4 for Network Engineers
+
+4 - Transport Layer - Segments - e2e connections, TCP/UDP - main protocols
+
+3 - Network Layer (packets, ip addresses) - Packets - ip ad, path destination
+
+2 - Data Link Layer - Frames - Mac addresses
+
+1 - Physical Layer (cables, network card) - Bits - Signals and Binary Transmission
+
+
+****************
+CREATING A SIMPLE TCP APPLICATION
+****************
+
+Use Wireshark for seeing more data packets
+-wireshark captures every single byte
+
+****************
+TRANSPORT LAYER
+****************
+
+TCP - makes sure that data is not changing - every single bit intending to send is actually sent over.
+
+UDP is about just making sure data is sent.
+UDP is more about speed.
+
+TCP - 3 WAY HANDSHAKE
+
+A will send, B will acknowledge
+
+UDP will add its own headers
+
+each layer will add its own headers.
+
+
+****************
+UDP HEADERS:
+****************
+
+UNDERSTANDING PORT NUMBERS
+****************
+
+stay away from system ports  - 0-1023
+iana.org
+
+
+//CHAT APP SOCKETS
+// 1 client 1 SOCKETS
+
+- this example isnt secure
+
+- kali linux for publicwifi hacking?
+
+Networking Layers Application - 
+1 - Application
+2 - Presentation
+3 - Session
+
+
+****************
+AWS DEPLOYMENT
+****************
+
+
+
+
+
 

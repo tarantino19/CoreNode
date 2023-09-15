@@ -1,5 +1,8 @@
 const net = require ("net");
 
+const PORT = 4020;
+const HOST = "127.0.0.1";  //CHANGE TO IP PROVIDED BY SERVER PROVIDER
+
 const server = net.createServer()  //creates a server
 
 //an array of client sockets
@@ -44,7 +47,7 @@ server.on ('connection', (socket) => {
 
 //socket - 2 endpoints talking together
 
-server.listen (3008, "127.0.0.1", () => {
+server.listen (PORT, HOST, () => {
     console.log(`Opened server on`, server.address ())
 })
 

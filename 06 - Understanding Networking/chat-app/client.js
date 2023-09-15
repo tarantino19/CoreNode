@@ -29,7 +29,7 @@ const moveCursor = (dx, dy) => {
 let id;
 
 //connect to the server
-const socket = net.createConnection({host: "127.0.0.1", port: 3008}, 
+const socket = net.createConnection({host: HOST, port: PORT}, 
   async () => {
     console.log(`connected to server`)
 
