@@ -30,3 +30,4 @@ server.listen (5050, "::1", () => {
 })
  //if this is a chat app, real time notif app, games app -  then we keep the connection open
 //listening to server to make sure it's working
+//this version is not good for deployment because these are streams and we need to drain it
