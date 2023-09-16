@@ -16,7 +16,22 @@ const socket = net.createConnection ({host: "::1" , port: 5050}, async () => {
       socket.write (data)
     })
 
+    fileStream.on ('end', () => {
+      console.log(`the file was successfully uploaded`)
+      socket.end()  //if this is a chat app, then we keep the connection open
+    })
+
 })
 
 
-//check github for this version - comment w/ commit "basic file"
+
+
+
+
+
+
+
+
+
+
+//check github for this version - comment w/ commit "basic upload"
