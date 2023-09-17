@@ -1,33 +1,51 @@
-const net = require('net');
-const fs = require ('node:fs/promises');
+const net = require("net");
+const fs = require("node:fs/promises");
 
-const server = net.createServer(() => {}); //creating a server 
+const server = net.createServer(() => {});
 
-let fileHandle, fileStream;
-	//the socket is the endpoint - it's always available - opening the connection + data (socket)
-	server.on('connection', (socket) => {
-			console.log(`new connection detected...`)
+server.on("connection", (socket) => {
+  console.log("New connection!");
+  let fileHandle, fileWriteStream;
 
-			//data is the a buffer
-					//opening the storage then putting a file name test.txt there - as write as well - fileHandle = then fileStream is the function thats actually writing it
-			socket.on ('data', async (data) => {
-					fileHandle = await fs.open ('storage/test.txt', 'w')
-					fileStream = fileHandle.createWriteStream ()   //can also use pipeline
-					fileStream.write(data) 	//writing to your destination file
-			})
+  socket.on("data", async (data) => {
+    if (!fileHandle) {
+      socket.pause(); // pause receiving data from the client
 
-			socket.on ('end', () => {
-				console.log(`connected ended`)
-				fileHandle.close();  
-			})
+      const indexOfDivider = data.indexOf("-------");
+      const fileName = data.subarray(10, indexOfDivider).toString("utf-8");
 
+      fileHandle = await fs.open(`storage/${fileName}`, "w");
+      fileWriteStream = fileHandle.createWriteStream(); // the stream to write to
 
-	});
+      // Writing to our destination file, discard the headers
+      fileWriteStream.write(data.subarray(indexOfDivider + 7));
 
+      socket.resume(); // resume receiving data from the client
+      fileWriteStream.on("drain", () => {
+        socket.resume();
+      });
+    } else {
+      if (!fileWriteStream.write(data)) {
+        socket.pause();
+      }
+    }
+  });
 
-server.listen (5050, "::1", () => {
-	console.log(`Upload Server Opened On`, server.address())
-})
+  // This end event happens when the client.js file ends the socket
+  socket.on("end", () => {
+    if (fileHandle) fileHandle.close();
+    fileHandle = undefined;
+    fileWriteStream = undefined;
+    console.log("Connection ended!");
+  });
+});
+
+server.listen(5050, "::1", () => {
+  console.log("Uploader server opened on", server.address());
+});
  //if this is a chat app, real time notif app, games app -  then we keep the connection open
 //listening to server to make sure it's working
 //this version is not good for deployment because these are streams and we need to drain it
+
+
+// https://www.youtube.com/watch?v=GVLw17FNZ3A&list=PLCiGw8i6Nhvo08rQd9J7e19ToKMCJVKaM&ab_channel=Cododev - playlist for corenode
